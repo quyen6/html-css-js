@@ -153,6 +153,17 @@ body {
             display: block;
             outline: none;
             width: 100%;
+            &:focus{
+                background-color: white;
+                border-color: $primary;
+                transition: all 0.25s linear;
+                box-shadow: 0 0 5px  $primary;
+                & + .signup-form__check{
+                    background-color: $primary;
+                    color: white;
+                    transition: all 0.25s linear;
+                }
+            }
         }
 
         &__row {
@@ -228,6 +239,25 @@ body {
             cursor: pointer;
             margin-bottom: 6.5rem;
             box-shadow: 0 5px 10px 0 rgba($primary, $alpha: 0.5);
+        }
+        &__validate{
+            position: relative;
+            .signup-form__input{
+                padding-right: 6rem;
+            }
+        }
+        &__check{
+            @include size(3rem);
+            border-radius: 8px;
+            background-color: #eee;
+            color: $gradient;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 2rem;
+            top:50%;
+            transform: translateY(-50%);
         }
 
     }

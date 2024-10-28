@@ -65,26 +65,32 @@
       </div>
 
     </div>
-    <form action="" class="signup-form">
+    <form action="" class="signup-form" autocomplete="off">
       <div class="signup-form__row">
         <div class="signup-form__group">
           <label for="name" class="signup-form__label">Name</label>
-          <input type="text" id="name" class="signup-form__input">
+          <div class="signup-form__validate">
+            <input type="text" id="name" class="signup-form__input"  required placeholder="Name">
+            <div class="signup-form__check">
+              <i class="fa fa-check"></i>
+            </div>
+
+          </div>
         </div>
         <div class="signup-form__group">
-          <label for="email" class="signup-form__label">Email</label>
-          <input type="email" id="email" class="signup-form__input">
+          <label for="email" class="signup-form__label" >Email</label>
+          <input type="email" id="email" class="signup-form__input" required placeholder="Email">
         </div>
       </div>
       <div class="signup-form__group">
         <label for="password" class="signup-form__label">Password</label>
-        <input type="password" id="password" class="signup-form__input">
+        <input type="password" id="password" class="signup-form__input" required placeholder="Password">
       </div>
       <div class="signup-form__term">
         <input type="checkbox" name="" id="term">
         <label for="term">I've read and agree</label>
       </div>
-        <button class="signup-form__submit">
+        <button class="signup-form__submit" type="submit">
           <i class="fa fa-arrow-right"></i>
         </button>
         <p>Already signin <a href="#">Sign in?</a></p>
