@@ -226,6 +226,44 @@ body {
   transform: translateY(-50%);
 }
 
+@media screen and (max-width: 1439px) {
+  .signup__content {
+    width: calc(60% - 1rem);
+  }
+  .signup.signup__image {
+    width: calc(40% - 1rem);
+  }
+}
+@media screen and (max-width: 1279px) {
+  .signup__content {
+    width: 100%;
+  }
+  .signup__image {
+    display: none;
+  }
+}
+@media screen and (max-width: 766px) {
+  body {
+    padding: 10px;
+  }
+  .signup {
+    padding: 20px;
+  }
+  .signup-social {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .signup-social__item {
+    width: 100%;
+  }
+  .signup-form__row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .signup-form__row .signup-form__group {
+    width: 100%;
+  }
+}
 .checkbox__input {
   display: none;
 }

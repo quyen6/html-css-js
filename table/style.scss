@@ -1,0 +1,179 @@
+$blue-color: #42a7fe;
+$green-color: #00c899;
+$primary: #fa4c53;
+$secondary: #291667;
+$text-color: #291667;
+$gradient: linear-gradient(to right, $primary, $secondary);
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flexbox($align: flex-start, $justify: flex-start, $flex-direction: row, $wrap: nowrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $flex-direction;
+    flex-wrap: $wrap;
+}
+
+@mixin maxWidth($value) {
+    @media screen and (max-width: $value) {
+        @content;
+    }
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    background-color: #f3f3f3;
+    // padding: 2rem;
+}
+
+input,
+textarea,
+button,
+select {
+    outline: none;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+table {
+    width: 100%;
+
+    th {
+        text-transform: uppercase;
+        font-weight: 600;
+
+    }
+
+    td,
+    th {
+        color: gray;
+        text-align: center;
+        font-size: 1.4rem;
+        padding: 2rem;
+    }
+
+    thead tr {
+        border-bottom: 1px solid gray;
+    }
+
+    .desc {
+        white-space: nowrap;
+        max-width: 14rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .status {
+        display: inline-block;
+        padding: 1rem 3rem;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: #00c89960;
+        color: #02795d;
+        border-radius: 3rem;
+    }
+
+    .action {
+        display: flex;
+
+        &-icon {
+            cursor: pointer;
+            margin: 0 5px;
+        }
+    }
+
+    .toggle {
+        &-input {
+            display: none;
+
+            &:checked+.toggle-label {
+                background-color: blue;
+
+                &::before {
+                    background-color: $blue-color;
+                    transform: translateY(-50%) translateX(1.5rem);
+                    // transform: translate(2rem -50%);
+                }
+            }
+        }
+
+        &-label {
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            @include size(3.5rem, .5rem);
+            background-color: #ccc;
+            border-radius: 1rem;
+            transition: all 0.25s linear;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                @include size(2rem, 2rem);
+                background-color: #ccc;
+                border-radius: 2rem;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: all 0.25s linear;
+                
+                
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .table {
+        width: 100%;
+        overflow-x: auto;
+        // ẩn scrollbar 
+        &::-webkit-scrollbar {
+            display: none;
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+// mobile 320 480 768 1024 1366 1440 1600 1920 (min-width)
+//desktop (max-width)
+
+// @media screen and (min-width: 1024px) {}
+
+//mobile
+// @media screen and (max-width: 1023px) {}
+
+//desktop 
